@@ -37,7 +37,6 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         display = view.findViewById<TextView>(R.id.displayView)
-        Log.d("!!!", "OnView")
         createButtonList(view)
         buttons.forEach{ button ->
             button.setOnClickListener{

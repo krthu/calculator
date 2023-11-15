@@ -21,7 +21,11 @@ class MainActivity : AppCompatActivity(), CalculatorUI {
     override fun onButtonPress(symbol: String){
         val display = findViewById<TextView>(R.id.displayView)
         calculator.symbolInterpreter(symbol)
-        display.text = calculator.numberEnteredAsString.toString()
+        if (calculator.numberEnteredAsString == null){
+            display.text = calculator.totalAsString
+        }else{
+            display.text = calculator.numberEnteredAsString.toString()
+        }
     }
 
 
