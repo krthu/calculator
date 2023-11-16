@@ -13,7 +13,7 @@ class Calculator() {
         when (symbol){
             "1","2","3","4","5","6","7","8","9","0","." -> {digitPressed(symbol)}
             "C" -> {
-                numberEnteredAsString = "0"
+                numberEnteredAsString = null
                 totalAsString = "0"
             }
             "+", "-", "*", "/" -> {signPress(symbol)}
@@ -23,6 +23,7 @@ class Calculator() {
 
     fun digitPressed(digit: String){
         if (numberEnteredAsString == "0" && digit != "." || numberEnteredAsString == null){
+
             numberEnteredAsString = digit
         }else{
             numberEnteredAsString += digit
@@ -36,7 +37,7 @@ class Calculator() {
             numberEnteredAsString = null
         }else{
             handleEquals()
-            sign = null
+            sign = symbol
         }
     }
 
@@ -58,7 +59,6 @@ class Calculator() {
                 sum =  total / numberEntered
             }
         }
-
         totalAsString = sum.toString()
         numberEnteredAsString = null
     }

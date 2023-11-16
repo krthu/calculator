@@ -24,10 +24,6 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
     private var calculatorUI: CalculatorUI? = null
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is CalculatorUI) {
